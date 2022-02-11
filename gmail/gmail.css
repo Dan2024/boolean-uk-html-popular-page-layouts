@@ -3,7 +3,12 @@
   margin: 0;
   padding: 0;
 }
+h2,
+i {
+  font-size: 2rem;
+}
 
+/* ----------- main grid layout ----------- */
 .grid-container {
   font-size: 1.5rem;
   font-family: sans-serif;
@@ -17,11 +22,50 @@
     1fr 2fr 1.5fr;
 }
 
+/* ----------- header section ----------- */
 .header {
   grid-area: hd;
   background-color: #d84727;
-  /* border: solid black 5px; */
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
 }
+
+.header * {
+  display: inline-block;
+}
+
+.logo {
+  justify-self: start;
+  align-self: center;
+  padding-left: 20px;
+}
+
+.search {
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+
+  border: 2px solid grey;
+  border-radius: 15px;
+  height: 50px;
+  padding: 2px 23px 2px 30px;
+  background-color: #f5f5f5;
+}
+
+.search:hover {
+  background-color: white;
+}
+
+.utilities {
+  justify-self: end;
+  align-self: center;
+}
+.utilities i {
+  padding-right: 30px;
+}
+
+/* ----------- left side layout ----------- */
 
 .left-container {
   grid-area: lc;
@@ -31,24 +75,46 @@
   grid-template-rows: 2fr 1fr 2fr;
 }
 
+.classifications {
+  display: grid;
+  grid-template-rows: 100px auto;
+}
+
+.btn-compose {
+  border-radius: 100vh;
+  border: grey solid 2px;
+  width: 70%;
+  height: 70%;
+  margin-left: 10px;
+
+  align-self: center;
+}
+
+.btn-icon,
+.btn-text {
+  font-size: 2rem;
+  color: grey;
+}
+
+/* ----------- main section layout ----------- */
 .main-container {
   grid-area: mc;
   background-color: #ef7b45;
 
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 100px 1fr;
 }
 
+/* ----------- right section layout ----------- */
 .right-container {
   grid-area: rc;
   background-color: #042a2b;
 
   display: grid;
-  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr 2fr;
 }
 
-/* .left-container div,
-.main-container div,
-.right-container div {
-  border: solid 5px black;
-} */
+.grid-container * {
+  place-items: start stretch;
+  border: white dashed 1px;
+}
